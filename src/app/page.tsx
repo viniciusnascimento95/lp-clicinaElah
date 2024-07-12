@@ -1,113 +1,175 @@
 import Image from "next/image";
+import Testimonial from "./components/Testimonial";
+import { CheckCircleIcon } from "@heroicons/react/24/outline";
+import { CheckBadgeIcon } from "@heroicons/react/24/solid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="bg-white text-gray-900">
+      {/* Header */}
+      <header className="bg-pink-300 text-green-900 py-8">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+          <div className="text-3xl font-bold mb-4 md:mb-0">Clínica Elah</div>
+          <div className="text-center">
+            <h1 className="text-5xl font-semibold mb-2">Imersão em Saúde da Mulher</h1>
+            <h2 className="text-2xl">Descubra o Segredo para uma Vida Saudável e Equilibrada</h2>
+          </div>
+          <div className="mt-4 md:mt-0">
+            <button className="bg-green-700 text-white py-3 px-6 rounded shadow-lg hover:bg-green-800 transition duration-300">Inscreva-se Agora!</button>
+          </div>
         </div>
-      </div>
+      </header>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      {/* Introdução */}
+      <section className="bg-pink-100 py-16">
+        <div className="container mx-auto flex flex-col md:flex-row items-center px-4">
+          <div className="md:w-3/5 mb-6 md:mb-0">
+            <Image
+              src="https://picsum.photos/800/800"
+              alt="Saúde da Mulher"
+              width={500}
+              height={300}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="md:w-2/5 md:pl-10">
+            <p className="mb-6 text-xl leading-relaxed">
+              Na Clínica Elah, acreditamos que a saúde da mulher vai além do físico. Nossa imersão é projetada para oferecer uma visão completa sobre a importância de uma vida saudável, abordando tanto o corpo quanto a mente.
+            </p>
+            <a href="#benefits" className="bg-green-700 text-white py-3 px-6 rounded shadow-lg hover:bg-green-800 transition duration-300 hover:underline">Descubra os Benefícios</a>
+          </div>
+        </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
+      {/* Benefícios */}
+      <section id="benefits" className="bg-pink-100 py-16 pb-40">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold text-center mb-12">Benefícios de Participar da Imersão</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex items-center space-x-4">
+              <CheckCircleIcon className="h-10 w-10 text-green-700" />
+              <p className="text-xl leading-relaxed">
+                Aprimore sua saúde física com dicas de nutrição e exercícios personalizados
+              </p>
+            </div>
+            <div className="flex items-center space-x-4">
+              <CheckCircleIcon className="h-10 w-10 text-green-700" />
+              <p className="text-xl leading-relaxed">
+                Desenvolva técnicas de mindfulness para melhorar seu bem-estar emocional
+              </p>
+            </div>
+            <div className="flex items-center space-x-4">
+              <CheckCircleIcon className="h-10 w-10 text-green-700" />
+              <p className="text-xl leading-relaxed">
+                Aprenda a gerir o estresse e a ansiedade com métodos comprovados
+              </p>
+            </div>
+            <div className="flex items-center space-x-4">
+              <CheckCircleIcon className="h-10 w-10 text-green-700" />
+              <p className="text-xl leading-relaxed">
+                Conecte-se com outras mulheres e compartilhe experiências e apoio
+              </p>
+            </div>
+            <div className="flex items-center space-x-4">
+              <CheckCircleIcon className="h-10 w-10 text-green-700" />
+              <p className="text-xl leading-relaxed">
+                Receba orientação de especialistas em saúde feminina
+              </p>
+            </div>
+            <div className="flex items-center space-x-4">
+              <CheckCircleIcon className="h-10 w-10 text-green-700" />
+              <p className="text-xl leading-relaxed">
+                Melhore sua qualidade de sono com técnicas e hábitos recomendados
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Importância da Saúde Emocional */}
+      <section className="bg-white-100 py-40">
+        <div className="container mx-auto text-center px-4">
+          <h2 className="text-3xl font-semibold mb-8">A Importância da Saúde Emocional</h2>
+          <p className="text-xl leading-relaxed my-10">
+            A saúde emocional é um pilar fundamental para uma vida equilibrada e satisfatória. Durante nossa imersão, você aprenderá como identificar e gerenciar emoções, cultivar relacionamentos saudáveis e desenvolver uma mentalidade positiva. Descubra como cuidar do seu bem-estar emocional pode transformar sua vida.
           </p>
-        </a>
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      {/* Depoimentos */}
+      <section className="bg-pink-200 py-40 ">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold text-center mb-12">Depoimentos de Quem Já Participou</h2>
+          <div className="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0">
+            <div className="flex-1">
+              <Testimonial
+                name="Maria S."
+                text="Participar da imersão foi um divisor de águas para minha saúde física e mental. Recomendo a todas as mulheres!"
+              />
+            </div>
+            <div className="flex-1">
+              <Testimonial
+                name="Ana P."
+                text="Aprendi a importância de cuidar do meu emocional e isso transformou minha rotina diária. Obrigada, Clínica Elah!"
+              />
+            </div>
+            
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      {/* Chamada para Ação */}
+      <section className="bg-pink-100 pt-40 text-center">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold mb-8">Inscreva-se Agora e Transforme Sua Vida!</h2>
+          <p className="text-lg leading-relaxed mb-6">Não perca a oportunidade de participar dessa experiência única. Inscreva-se agora e dê o primeiro passo rumo a uma vida mais saudável e equilibrada.</p>
+          <button className="bg-green-700 text-white py-3 px-6 rounded shadow-lg hover:bg-green-800 transition duration-300">Quero Me Inscrever!</button>
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      {/* FAQ */}
+      <section className="bg-pink-100 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold text-center mb-12">Perguntas Frequentes</h2>
+          <div className="space-y-8">
+            <details className="bg-white p-6 rounded-lg shadow-md">
+              <summary className="cursor-pointer text-lg font-semibold">Qual a duração da imersão?</summary>
+              <p>A imersão dura 4 semanas, com encontros semanais e atividades diárias.</p>
+            </details>
+            <details className="bg-white p-6 rounded-lg shadow-md">
+              <summary className="cursor-pointer text-lg font-semibold">Preciso ter algum conhecimento prévio?</summary>
+              <p>Não, a imersão é aberta para todas as mulheres, independentemente do seu nível de conhecimento sobre saúde.</p>
+            </details>
+            <details className="bg-white p-6 rounded-lg shadow-md">
+              <summary className="cursor-pointer text-lg font-semibold">Quais são os métodos de pagamento?</summary>
+              <p>Aceitamos cartões de crédito, débito e pagamentos via PayPal.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      {/* Botão do WhatsApp */}
+      <a 
+        href="https://wa.me/1234567890" 
+        className="fixed bottom-4 right-4 bg-green-600 text-white p-3 rounded-full shadow-lg flex items-center justify-center"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FontAwesomeIcon icon={faWhatsapp} className="h-10 w-10 pr-1" />
+        Fale conosco
+      </a>
+
+      {/* Footer */}
+      {/* <footer className="bg-green-700 text-white py-6 text-center">
+        <div className="container mx-auto px-4">
+          <p className="text-lg font-semibold">Clínica Elah</p>
+          <p>Endereço: Rua da Saúde, 123, Centro, Cidade</p>
+          <p>Telefone: (XX) XXXX-XXXX</p>
+          <p>Email: contato@clinicaelah.com</p>
+        </div>
+      </footer> */}
+    </div>
   );
 }
